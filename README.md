@@ -1,14 +1,17 @@
 # Пример развертывания react-приложения на Evolution Container Apps
 Этот пример демонстрирует как развернуть веб-приложение разработанное на React в Evolution Container Apps за несколько шагов.
-1. Необходимо собрать docker-образ для вашего приложения под платформу linux/amd64. В данном примере готовый Dockerfile находится в репозитории.
 
+<img width="700" alt="image" src="https://github.com/CLOUDdotRu/evo-containerapp-react-sample/assets/129149541/7497f9ca-d607-44c9-9ae9-1e23141ce51b">
+
+1. Собрать docker-образ для вашего приложения под платформу linux/amd64. В данном примере готовый Dockerfile находится в репозитории.
+   
    `docker build --tag bondarevsky.cr.cloud.ru/react-hello-world https://github.com/evo/containerapp-react-sample.git#main --platform linux/amd64`
-2. Необходимо загрузить собранный образ в Evolution Container Registry
+3. Загрузить собранный образ в Evolution Container Registry
 
    `docker login bondarevsky.cr.cloud.ru -u <keyid> -p <password>`
    
    `docker push bondarevsky.cr.cloud.ru/react-hello-world`
-4. Из контекстного меню в Evolution Container Registry выберите Создать Container App. Необходимо указать порт контейнера в соотвествии с указанным в Dockerfile. В данном случае 80
+4. Из контекстного меню в Evolution Container Registry выберите Создать Container App. Необходимо указать порт контейнера в соотвествии с указанным в Dockerfile. В данном случае 8080.
    
    <img src="https://github.com/Mikhail2k15/containerapp-react-vite-sample/assets/11201670/f651ff07-f530-4b0c-96cb-d3acdef1e032" width="500px">
 > [!IMPORTANT]
